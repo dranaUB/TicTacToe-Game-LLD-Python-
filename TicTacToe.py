@@ -88,16 +88,15 @@ def main():
             
             game.board.printBoard()
             playerTurn=game.current_player()
-            
-            raw = input(f"{playerTurn.name}, enter row,col (0–{game.board.size-1}): ")
-
-            parts = raw.split(',')
-            if len(parts) != 2:
+            raw=input(f"{playerTurn.name}, enter row,col (0–{game.board.size-1}): ")
+            parts=raw.split(',')
+             
+            if len(parts)!=2:
                     print("Invalid format. Use: row,col  (e.g. 1,2)")
                     continue
             try:
-                    row = int(parts[0].strip())
-                    col = int(parts[1].strip())
+                    row=int(parts[0].strip())
+                    col=int(parts[1].strip())
             except ValueError:
                         print("Please enter two integers separated by a comma.")
                         continue
